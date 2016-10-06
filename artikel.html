@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>ACT</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <script src="js/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <style>
+  .carousel-inner > .item > img,
+  .carousel-inner > .item > a > img {
+      width: 50%;
+      margin: auto;
+  }
+
+body {background-color: #f3f3f3;}
+
+.jumbotron {text-align: center; margin: -15px 0px -15px 0px;}
+.row {text-decoration: none;}
+.row2 {background: #374e06;
+    position: fixed;
+    height: 80px;
+    bottom: 0;
+    width: 100%;
+}
+
+div.background
+{
+  background: url(img/longsor.jpg) no-repeat;
+  border: 1px solid white;
+}
+
+div.footer
+{
+  background: url(img/ads.jpg) no-repeat;
+  border: 2px solid black;
+  height:76px;
+}
+
+div.transbox
+{
+  width:50%;
+  margin: 100px;
+  background-color: #ffffff;
+  border: 1px solid black;
+
+  opacity:0.6;
+  filter:alpha(opacity=60); /* For IE8 and earlier */
+}
+div.transbox p
+{
+  margin: 5%;
+  font-weight: bold;
+  color: #000000;
+}
+
+.news {border: solid 1px #cccccc; background: #ededed; padding: 5px; border-radius: 5px;}
+
+.button {padding-bottom: 12px; text-align: center;}
+
+  </style>
+</head>
+<body>
+<input type="hidden" name="page_level" id="page_level" value="1">
+<div class="container" id="list_menu" style="display:block">
+<div class="row">
+  <div class="col-md-4 topheader">
+   <img class="img-responsive" src="img/topheader.jpg">
+  </div>
+</div>
+   
+<div class="news">
+  <center><h3>Banjir Bojonegoro Berangsur Surut</h3></center>
+<center><img src="http://www.act.id/data/whatshappens/banjirbojonegoro_820.jpg" class="img-responsive" alt="Responsive image" width="400" height="300" align="middle"></center><br>
+<p>
+ACTNews, BOJONEGORO - Banjir yang merendam ratusan hektar lahan pertanian dan pemukiman warga di tiga Kecamatan di Kabupaten Bojonegoro Senin (6/4) berangsur surut. Ketiga Kecamatan tersebut adalah Trucuk,Kanor dan Baureno. Ketinggian air saat ini terpantau tinggal semata kaki orang dewasa.
+Menurut Salamun (28) relawan MRI Kabupaten Bojonegoro yang aktif memantau ketinggian debit air Sungai Bengawan Solo, banjir mulai surut sejak pukul 07:00 Minggu (5/4). 
+Banjir yang merendam ratusan hektar lahan pertanian dan pemukiman warga di tiga Kecamatan di Kabupaten Bojonegoro Senin (6/4) berangsur surut. Ketiga Kecamatan tersebut adalah Trucuk,Kanor dan Baureno. Ketinggian air saat ini terpantau tinggal semata kaki orang dewasa.
+Menurut Salamun (28) relawan MRI Kabupaten Bojonegoro yang aktif memantau ketinggian debit air Sungai Bengawan Solo, banjir mulai surut sejak pukul 07:00 Minggu (5/4).
+Banjir yang merendam ratusan hektar lahan pertanian dan pemukiman warga di tiga Kecamatan di Kabupaten Bojonegoro Senin (6/4) berangsur surut. Ketiga Kecamatan tersebut adalah Trucuk,Kanor dan Baureno. Ketinggian air saat ini terpantau tinggal semata kaki orang dewasa.
+Menurut Salamun (28) relawan MRI Kabupaten Bojonegoro yang aktif memantau ketinggian debit air Sungai Bengawan Solo, banjir mulai surut sejak pukul 07:00 Minggu (5/4).
+Banjir yang merendam ratusan hektar lahan pertanian dan pemukiman warga di tiga Kecamatan di Kabupaten Bojonegoro Senin (6/4) berangsur surut. Ketiga Kecamatan tersebut adalah Trucuk,Kanor dan Baureno. Ketinggian air saat ini terpantau tinggal semata kaki orang dewasa.
+Menurut Salamun (28) relawan MRI Kabupaten Bojonegoro yang aktif memantau ketinggian debit air Sungai Bengawan Solo, banjir mulai surut sejak pukul 07:00 Minggu (5/4).</p>
+</div><br>
+
+</div>
+<br>
+<div class="button">
+  <button class="btn btn-small btn-primary" type="button">Ayo Donasi</button>
+</div>
+
+<div class>
+<br><br><br><br>
+</div>
+
+<div class="row2" style="height:55px;">
+  <center><h3 style="margin-top:10px;"><a href="index.html"><img src="img/home.png" alt="Responsive image" width="35" height="35"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="tel:02129406565"><img src="img/call.png" alt="Responsive image" width="35" height="35"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="publish.html"><img src="img/photo.png" alt="Responsive image" width="35" height="35"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="push.html"><img src="img/message.png" alt="Responsive image" width="35" height="35"></a></h3></center>
+</div>
+
+<script type="text/javascript" src="cordova.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+
+<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript">
+  $(document).ready(function(){
+     var urls = "http://23.229.116.181/act/api/beritakemanusiaan.php";
+     $.ajax(
+          {
+              url: urls,
+              jsonp: "callback",
+              dataType:"json",
+              success:function (data) {
+                $('#date_1').text(data.berita_kemanusiaan[0].tanggal);
+                $('#date_2').text(data.berita_kemanusiaan[1].tanggal);
+                $('#date_3').text(data.berita_kemanusiaan[2].tanggal);
+                $('#judul_1').html(data.berita_kemanusiaan[0].judul);
+                $('#judul_2').html(data.berita_kemanusiaan[1].judul);
+                $('#judul_3').html(data.berita_kemanusiaan[2].judul);
+              }
+          }
+      );
+  });
+</script>
+</body>
+</html>

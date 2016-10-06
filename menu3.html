@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>ACT</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <script src="js/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <style>
+  .carousel-inner > .item > img,
+  .carousel-inner > .item > a > img {
+      width: 50%;
+      margin: auto;
+  }
+
+body {background-color: #f3f3f3;}
+
+.jumbotron {text-align: center; margin: -15px 0px -15px 0px;}
+.row {text-decoration: none;}
+.row2 {background: #050608;
+    position: fixed;
+    height: 80px;
+    bottom: 0;
+    width: 100%;
+}
+
+div.background
+{
+  background: url(img/longsor.jpg) no-repeat;
+  border: 1px solid white;
+}
+
+div.footer
+{
+  background: url(img/ads.jpg) no-repeat;
+  border: 2px solid black;
+  height:76px;
+}
+
+div.transbox
+{
+  width:50%;
+  margin: 100px;
+  background-color: #ffffff;
+  border: 1px solid black;
+
+  opacity:0.6;
+  filter:alpha(opacity=60); /* For IE8 and earlier */
+}
+div.transbox p
+{
+  margin: 5%;
+  font-weight: bold;
+  color: #000000;
+}
+
+.news {border: solid 1px #cccccc; background: #ededed; padding: 5px; border-radius: 5px;}
+
+.button {padding-bottom: 12px; text-align: center;}
+
+  .topheader{
+    padding-right:0 !important;
+    padding-left:0 !important;
+  }
+
+  .row2 img a {color: #fff; text-decoration: none;}
+  .row2 img a:hover {color: #000; text-decoration: none;}
+
+  </style>
+</head>
+<body>
+
+<div class="container">
+
+<div class="row">
+  <div class="col-md-4 topheader">
+   <img class="img-responsive" src="img/topheader.jpg">
+  </div>
+
+</div>
+
+    <h3>Ayo Donasi</h3>
+<!-- 4:3 aspect ratio -->
+<div class="embed-responsive embed-responsive-4by3">
+  <iframe height="70%" class="embed-responsive-item" src="http://23.229.116.181/act/api/donasi.php"></iframe>
+</div>
+
+</div>
+<div>
+<br><br><br><br>
+</div>
+
+<div class="row2" style="height:55px;">
+  <center><h3 style="margin-top:10px;"><a href="index.html"><img src="img/home.png" alt="Responsive image" width="35" height="35"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="tel:02129406565"><img src="img/call.png" alt="Responsive image" width="35" height="35"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="publish.html"><img src="img/photo.png" alt="Responsive image" width="35" height="35"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="push.html"><img src="img/message.png" alt="Responsive image" width="35" height="35"></a></h3></center>
+</div>
+
+<script type="text/javascript" src="cordova.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+</body>
+</html>

@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>ACT</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <script src="js/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <style>
+    body{
+  	 background: #f3f3f3;
+  	}
+
+  .topheader{
+    padding-right:0 !important;
+    padding-left:0 !important;
+  }
+
+    .row2 {
+      background: #050608;
+      position: fixed;
+      height: 80px;
+      bottom: 0;
+      width: 100%;
+    }
+    #note{
+      font-size: 8px;
+      margin-bottom: 0px;
+    }
+    #note_wrapper{
+      margin-top: -5px;
+    }
+    #button_click{
+      padding-left: 0px;
+    }
+
+ </style>
+
+  <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+  <script type="text/javascript" charset="utf-8">
+
+  var pictureSource;   // picture source
+  var destinationType; // sets the format of returned value
+
+  // Wait for device API libraries to load
+  //
+  document.addEventListener("deviceready",onDeviceReady,false);
+
+  // device APIs are available
+  //
+  function onDeviceReady() {
+      pictureSource=navigator.camera.PictureSourceType;
+      destinationType=navigator.camera.DestinationType;
+      var elem = document.getElementById("uuid");
+      elem.value = device.uuid;
+  }
+
+  // Called when a photo is successfully retrieved
+  //
+  function onPhotoDataSuccess(imageData) {
+    // Uncomment to view the base64-encoded image data
+    // console.log(imageData);
+
+    // Get image handle
+    //
+    var myImage = document.getElementById('myImage');
+
+    // Unhide image elements
+    //
+    myImage.style.display = 'block';
+
+    // Show the captured photo
+    // The in-line CSS rules are used to resize the image
+    //
+    myImage.src = "data:image/jpeg;base64," + imageData;
+
+    document.getElementById('form_send').style.display = 'block';
+  }
+
+  // Called when a photo is successfully retrieved
+  //
+  function onPhotoURISuccess(imageURI) {
+    // Uncomment to view the image file URI
+    // console.log(imageURI);
+
+    // Get image handle
+    //
+    var myImage = document.getElementById('myImage');
+
+    // Unhide image elements
+    //
+    myImage.style.display = 'block';
+
+    // Show the captured photo
+    // The in-line CSS rules are used to resize the image
+    //
+    myImage.src = imageURI;
+    document.getElementById('form_send').style.display = 'block';
+    document.getElementById('button_click').style.display = 'none';
+  }
+
+  // A button will call this function
+  //
+  function capturePhoto() {
+    // Take picture using device camera and retrieve image as base64-encoded string
+    navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 20,
+      destinationType: destinationType.FILE_URI });
+  }
+
+  // A button will call this function
+  //
+  function capturePhotoEdit() {
+    // Take picture using device camera, allow edit, and retrieve image as base64-encoded string
+    navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 20, allowEdit: true,
+      destinationType: destinationType.DATA_URL });
+  }
+
+  // A button will call this function
+  //
+  function getPhoto(source) {
+    // Retrieve image file location from specified source
+    navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 50,
+      destinationType: destinationType.FILE_URI,
+      sourceType: source });
+  }
+
+  // Called if something bad happens.
+  //
+  function onFail(message) {
+    alert('Failed because: ' + message);
+  }
+
+  </script>
+
+</head>
+<body>
+<input type="hidden" name="page_level" id="page_level" value="1">
+<div class="container">
+<div class="row">
+  <div class="col-md-4 topheader">
+   <img class="img-responsive" src="img/topheader.jpg">
+  </div>
+</div>
+<br>
+<div id="button_click" class="col-md-4">
+  <center><button onclick="capturePhoto();" class="btn btn-default">Capture Photo</button> <br></center>
+</div><br />
+<form id="form_send" action="#" method="post" style="display:block;height:100%;">
+  <div class="col-xs-6 col-md-4">
+    <input type="hidden" id="uuid" name="uuid">
+    <div class="form-group">
+      <label for="exampleInputName2">Pengirim</label>
+      <input type="text" class="form-control" id="nama" name="nama" placeholder="Nama" required />
+    </div>
+    <div class="form-group">
+      <label for="NoHP">Nomor HP</label>
+      <input type="tel" class="form-control" id="nomor_hp" name="nomor_hp" placeholder="Nomor HP" required />
+    </div>
+    <!-- <div class="form-group">
+      <label for="exampleInputEmail1">Email address</label>
+      <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+    </div> -->
+    <div class="form-group">
+      <label for="exampleInputName2">Keterangan</label>
+      <textarea class="form-control" id="pesan" name="pesan" placeholder="Keterangan" required ></textarea>
+      <!-- <input type="text" class="form-control" id="pesan" name="pesan" placeholder="Pesan" required /> -->
+    </div>
+  </div>
+  <div class="col-xs-6 col-md-4"><br />
+    <center>
+    <img src="img/publisher.png" class="img-responsive" alt="Responsive image" style="height:130px;" id="myImage"><br />
+    </center>
+  </div>
+  <div class="col-xs-12 col-md-12" id="note_wrapper">
+    <center><button type="button" id="send" class="btn btn-default" style="background-color:#f7941d;border-color: #f7941d;">Kirim</button></center>
+
+    <p id="note">Syarat & ketentuan : Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation </p>
+    <p id="note">Disclaimer : Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt </p>
+<br><br><br><br>
+  </div>
+</form>
+<br><br><br><br>
+</div>
+<div class="row2" style="height:55px;">
+  <center><h3 style="margin-top:10px;"><a href="index.html"><img src="img/home.png" alt="Responsive image" width="35" height="35"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="tel:02129406565"><img src="img/call.png" alt="Responsive image" width="35" height="35"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="publish.html"><img src="img/photo.png" alt="Responsive image" width="35" height="35"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="push.html"><img src="img/message.png" alt="Responsive image" width="35" height="35"></a></h3></center>
+</div>
+<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript">
+  $("#send").click(function() {
+      // alert(data_send);
+      document.getElementById("send").disabled = true;
+      var photo_url = "http://23.229.116.181/act/api/photos.php";
+      var win = function(r) {
+          console.log("Code = " + r.responseCode);
+          console.log("Response = " + r.response);
+          console.log("Sent = " + r.bytesSent);
+          alert("Upload Success");
+
+          // Send GCM
+          // $.ajax(
+          //     {
+          //         url: "http://23.229.116.181/act/api/gcm.php",
+          //         data:$("#form_send").serialize(),
+          //         type:"POST",
+          //         dataType:"json",
+          //         success:function (data) {
+          //           var win = function(r) {
+          //               console.log("Code = " + r.responseCode);
+          //               console.log("Response = " + r.response);
+          //               console.log("Sent = " + r.bytesSent);
+          //           }
+
+          //           var fail = function(error) {
+          //               alert("An error has occurred: Code = " = error.code);
+          //               console.log("upload error source " + error.source);
+          //               console.log("upload error target " + error.target);
+          //           }
+          //         },
+          //         error:function () {
+          //            alert('Error connecting to server');
+          //         }
+          //     }
+          //  );
+
+           $('#form_send')[0].reset();
+           document.getElementById('myImage').src='img/publisher.png';
+           document.getElementById("send").disabled = false;
+           document.getElementById('button_click').style.display = 'block';
+      }
+
+      var fail = function(error) {
+          alert("An error has occurred: Code = " = error.code);
+          console.log("upload error source " + error.source);
+          console.log("upload error target " + error.target);
+      }
+
+      var ft = new FileTransfer();                     
+      var options = new FileUploadOptions();  
+      var imagefile = $("#myImage").attr('src');
+      options.fileKey="photo";                      
+      options.fileName=imagefile.substr(imagefile.lastIndexOf('/')+1);
+      options.mimeType="image/jpeg";  
+      var params = new Object();
+      params.photo_caption = $('#photo_caption').val();
+      params.uuid = $('#uuid').val();
+      params.nama = $('#nama').val();
+      params.pesan = $('#pesan').val();
+      params.nomor_hp = $('#nomor_hp').val();
+      options.params = params;
+      options.chunkedMode = false;
+      ft.upload(imagefile, photo_url, win, fail, options);
+
+  });
+
+</script>
+<script type="text/javascript" charset="utf-8" src="js/cordova.js"></script>
+<!-- <script src="GCMPlugin.js"></script> <!-- GCM Cordova plugin -->
+<script type="text/javascript" charset="utf-8" src="js/jquery_1.5.2.min.js"></script>
+
+<!-- Include my Javascript routines -->
+<script type="text/javascript" charset="utf-8" src="js/GCMPlugin.js"></script>
+<script type="text/javascript" charset="utf-8" src="js/CORDOVA_GCM_script.js"></script>
+
+<script type="text/javascript" charset="utf-8" src="js/statusbarnotification.js"></script>
+<script type="text/javascript" charset="utf-8" src="js/statbarnotif.js"></script>
+</body>
+</html>

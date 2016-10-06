@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>ACT</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <script src="js/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <style>
+  .carousel-inner > .item > img,
+  .carousel-inner > .item > a > img {
+      width: 50%;
+      margin: auto;
+  }
+
+body {background-color: #f3f3f3;}
+
+.jumbotron {text-align: center; margin: -15px 0px -15px 0px;}
+.row {text-decoration: none;}
+
+.row2 {background: #050608;
+    position: fixed;
+    height: 80px;
+    bottom: 0;
+    width: 100%;
+}
+
+div.background
+{
+  background: url(img/longsor.jpg) no-repeat;
+  border: 1px solid white;
+}
+
+div.footer
+{
+  background: url(img/ads.jpg) no-repeat;
+  border: 2px solid black;
+  height:76px;
+}
+
+div.transbox
+{
+  width:50%;
+  margin: 100px;
+  background-color: #ffffff;
+  border: 1px solid black;
+
+  opacity:0.6;
+  filter:alpha(opacity=60); /* For IE8 and earlier */
+}
+div.transbox p
+{
+  margin: 5%;
+  font-weight: bold;
+  color: #000000;
+}
+
+.news {border: solid 1px #cccccc; background: #ededed; padding: 5px; border-radius: 5px;}
+
+.button {padding-bottom: 12px; text-align: center;}
+.tanggal {
+  margin-top:-5px;
+  margin-bottom: 0;
+  font-size:10px;
+}
+  .topheader{
+    padding-right:0 !important;
+    padding-left:0 !important;
+  }
+  .btn-edit{
+     background-color:#8dc63f !important;border-color: #8dc63f;
+  }
+  </style>
+</head>
+<body>
+<input type="hidden" name="page_level" id="page_level" value="1">
+<div class="container" id="list_menu" style="display:block">
+<div class="row">
+  <div class="col-md-4 topheader">
+   <img class="img-responsive" src="img/topheader.jpg">
+  </div>
+</div>
+<div id="loading">
+  <center><br /><br /><img src="img/loading.gif"></center>
+</div>
+<div id="page_content" style="display:none;">
+  <h3>Info Bencana</h3>
+  <button class="btn btn-info btn-xs btn-edit">Tentang</button>&nbsp;<button class="btn btn-info btn-xs btn-edit">Sedang terjadi</button>&nbsp;<button class="btn btn-info btn-xs btn-edit">Tips & Trik</button>&nbsp;<button class="btn btn-info btn-xs btn-edit">Laporan</button><br /><br />
+  <div class="news">
+    <h4 id="judul_1">Banjir Bojonegoro Berangsur Surut</h4>
+  <p id="date_1" class="tanggal"></p>
+  <p><img id="gambar_1" src="http://www.act.id/data/whatshappens/banjirbojonegoro_820.jpg" class="img-responsive" alt="Responsive image" width="75" height="75" align="left" style="margin-right:10px;">
+  <font id="isi_1">ACTNews, BOJONEGORO - Banjir yang merendam ratusan hektar lahan pertanian dan pemukiman warga di tiga Kecamatan di Kabupaten Bojonegoro Senin (6/4) berangsur surut. Ketiga Kecamatan tersebut adalah Trucuk,Kanor dan Baureno. Ketinggian air saat ini terpantau tinggal semata kaki orang dewasa.
+
+  Menurut Salamun (28) relawan MRI Kabupaten Bojonegoro yang aktif memantau ketinggian debit air Sungai Bengawan Solo, banjir mulai surut sejak pukul 07:00 Minggu (5/4). Read more...</font></p>
+  </div><br>
+
+  <div class="news">
+    <h4 id="judul_2">Terpaksa Panen Dini, Petani Bojonegoro Merugi</h4>
+    <p id="date_2" class="tanggal"></p>
+  <p><img id="gambar_2" src="http://www.act.id/data/whatshappens/baniir-petani-panen-dini_508.jpg" class="img-responsive" alt="Responsive image" width="75" height="75" align="left" style="margin-right:10px;">
+  <font id="isi_2">ACTNews, BOJONEGORO - Banjir luapan air Sungai Bengawan Solo masih merendam hektaran sawah milik petani yang ada di Bojonegoro, khususnya di bantaran sungai terpanjang di pulau Jawa itu. Sehingga para petani terpaksa melakukan panen dini tanaman padi untuk mengurangi jumlah kerugian yang dialami.
+
+  "Mestinya belum waktunya panen, maksimalnya tujuh sampai sepuluh hari lagi agar buahnya maksimal. Tetapi karena terendam air terpaksa kita lakukan panen dini," ujar salah satu petani di Desa Simbatan, Kecamatan Kanor, Marjuki, Minggu sore (05/04).  Read more...</font></p>
+  </div><br>
+
+  <div class="news">
+  <h4 id="judul_3">Nasib Pengungsi Sinabung Terkatung</h4>
+  <p id="date_3" class="tanggal"></p>
+  <p><img id="gambar_3" src="http://www.act.id/data/whatshappens/medium/nasibpengungsiterkatung_936.jpg" class="img-responsive" alt="Responsive image" width="75" height="75" align="left" style="margin-right:10px;">
+  <font id="isi_3">ACTNews, KARO - Hingga Sabtu  sore keaktifan Gunung Sinabung masih tampak. Erupsi yang sempat membuat panik warga sekitar Sinabung terjadi pada Kamis (2/4) lalu. Saat itu terjadi 118 kali gempa guguran beramplitudo maksimum 5-113 mm, tremor dan terjadi 40 kali awan panas guguran dengan puncak  sejauh 4 km ke selatan dan 1 km ke tenggara, tinggi abu vulkanik 2 km. Perisitiwa kembali membuat nasib pengungsi terkatung.  Read more...</font></p>
+  </div>
+  <br>
+  <div class="button">
+    <button class="btn btn-sm btn-primary sebelumnya" type="button" onClick="get_page('sebelumnya');">Prev</button>&nbsp;
+    <button class="btn btn-sm btn-primary selanjutnya" type="button" onClick="get_page('selanjutnya');">Next</button>
+  </div>
+</div>
+  <div class="container" id="detail_menu_1" style="display:none;">
+    <h3>Info Bencana</h3>
+    <div class="news">
+      <center><h3 id="detail_judul_1">Banjir Bojonegoro Berangsur Surut</h3></center>
+    <center><img id="detail_gambar_1" src="http://www.act.id/data/whatshappens/banjirbojonegoro_820.jpg" class="img-responsive" alt="Responsive image" width="400" height="300" align="middle"></center><br>
+    <p id="detail_tanggal_1" class="tanggal"></p>
+    <p id="detail_isi_1">
+    ACTNews, BOJONEGORO - Banjir yang merendam ratusan hektar lahan pertanian dan pemukiman warga di tiga Kecamatan di Kabupaten Bojonegoro Senin (6/4) berangsur surut. Ketiga Kecamatan tersebut adalah Trucuk,Kanor dan Baureno. Ketinggian air saat ini terpantau tinggal semata kaki orang dewasa.
+    Menurut Salamun (28) relawan MRI Kabupaten Bojonegoro yang aktif memantau ketinggian debit air Sungai Bengawan Solo, banjir mulai surut sejak pukul 07:00 Minggu (5/4). 
+    Banjir yang merendam ratusan hektar lahan pertanian dan pemukiman warga di tiga Kecamatan di Kabupaten Bojonegoro Senin (6/4) berangsur surut. Ketiga Kecamatan tersebut adalah Trucuk,Kanor dan Baureno. Ketinggian air saat ini terpantau tinggal semata kaki orang dewasa.
+    Menurut Salamun (28) relawan MRI Kabupaten Bojonegoro yang aktif memantau ketinggian debit air Sungai Bengawan Solo, banjir mulai surut sejak pukul 07:00 Minggu (5/4).
+    Banjir yang merendam ratusan hektar lahan pertanian dan pemukiman warga di tiga Kecamatan di Kabupaten Bojonegoro Senin (6/4) berangsur surut. Ketiga Kecamatan tersebut adalah Trucuk,Kanor dan Baureno. Ketinggian air saat ini terpantau tinggal semata kaki orang dewasa.
+    Menurut Salamun (28) relawan MRI Kabupaten Bojonegoro yang aktif memantau ketinggian debit air Sungai Bengawan Solo, banjir mulai surut sejak pukul 07:00 Minggu (5/4).
+    Banjir yang merendam ratusan hektar lahan pertanian dan pemukiman warga di tiga Kecamatan di Kabupaten Bojonegoro Senin (6/4) berangsur surut. Ketiga Kecamatan tersebut adalah Trucuk,Kanor dan Baureno. Ketinggian air saat ini terpantau tinggal semata kaki orang dewasa.
+    Menurut Salamun (28) relawan MRI Kabupaten Bojonegoro yang aktif memantau ketinggian debit air Sungai Bengawan Solo, banjir mulai surut sejak pukul 07:00 Minggu (5/4).</p>
+    </div>
+    <br>
+    <div class="button">
+      <button class="btn btn-small btn-primary" type="button">Ayo Donasi</button>&nbsp;&nbsp;<button class="btn btn-small btn-primary" type="button" onClick="show_list();">Kembali</button>
+    </div>
+
+  </div>
+  <div class="container" id="detail_menu_2" style="display:none;">
+    <h3>Info Bencana</h3>
+    <div class="news">
+      <center><h3 id="detail_judul_2">Banjir Bojonegoro Berangsur Surut</h3></center>
+    <center><img id="detail_gambar_2" src="http://www.act.id/data/whatshappens/banjirbojonegoro_820.jpg" class="img-responsive" alt="Responsive image" width="400" height="300" align="middle"></center><br>
+    <p id="detail_tanggal_2" class="tanggal"></p>
+    <p id="detail_isi_2">
+    ACTNews, BOJONEGORO - Banjir yang merendam ratusan hektar lahan pertanian dan pemukiman warga di tiga Kecamatan di Kabupaten Bojonegoro Senin (6/4) berangsur surut. Ketiga Kecamatan tersebut adalah Trucuk,Kanor dan Baureno. Ketinggian air saat ini terpantau tinggal semata kaki orang dewasa.
+    Menurut Salamun (28) relawan MRI Kabupaten Bojonegoro yang aktif memantau ketinggian debit air Sungai Bengawan Solo, banjir mulai surut sejak pukul 07:00 Minggu (5/4). 
+    Banjir yang merendam ratusan hektar lahan pertanian dan pemukiman warga di tiga Kecamatan di Kabupaten Bojonegoro Senin (6/4) berangsur surut. Ketiga Kecamatan tersebut adalah Trucuk,Kanor dan Baureno. Ketinggian air saat ini terpantau tinggal semata kaki orang dewasa.
+    Menurut Salamun (28) relawan MRI Kabupaten Bojonegoro yang aktif memantau ketinggian debit air Sungai Bengawan Solo, banjir mulai surut sejak pukul 07:00 Minggu (5/4).
+    Banjir yang merendam ratusan hektar lahan pertanian dan pemukiman warga di tiga Kecamatan di Kabupaten Bojonegoro Senin (6/4) berangsur surut. Ketiga Kecamatan tersebut adalah Trucuk,Kanor dan Baureno. Ketinggian air saat ini terpantau tinggal semata kaki orang dewasa.
+    Menurut Salamun (28) relawan MRI Kabupaten Bojonegoro yang aktif memantau ketinggian debit air Sungai Bengawan Solo, banjir mulai surut sejak pukul 07:00 Minggu (5/4).
+    Banjir yang merendam ratusan hektar lahan pertanian dan pemukiman warga di tiga Kecamatan di Kabupaten Bojonegoro Senin (6/4) berangsur surut. Ketiga Kecamatan tersebut adalah Trucuk,Kanor dan Baureno. Ketinggian air saat ini terpantau tinggal semata kaki orang dewasa.
+    Menurut Salamun (28) relawan MRI Kabupaten Bojonegoro yang aktif memantau ketinggian debit air Sungai Bengawan Solo, banjir mulai surut sejak pukul 07:00 Minggu (5/4).</p>
+    </div>
+    <br>
+    <div class="button">
+      <button class="btn btn-small btn-primary" type="button">Ayo Donasi</button>&nbsp;&nbsp;<button class="btn btn-small btn-primary" type="button" onClick="show_list();">Kembali</button>
+    </div>
+
+  </div>
+  <div class="container" id="detail_menu_3" style="display:none;">
+    <h3>Info Bencana</h3>
+    <div class="news">
+      <center><h3 id="detail_judul_3">Banjir Bojonegoro Berangsur Surut</h3></center>
+    <center><img id="detail_gambar_3" src="http://www.act.id/data/whatshappens/banjirbojonegoro_820.jpg" class="img-responsive" alt="Responsive image" width="400" height="300" align="middle"></center><br>
+    <p id="detail_tanggal_3" class="tanggal"></p>
+    <p id="detail_isi_3">
+    ACTNews, BOJONEGORO - Banjir yang merendam ratusan hektar lahan pertanian dan pemukiman warga di tiga Kecamatan di Kabupaten Bojonegoro Senin (6/4) berangsur surut. Ketiga Kecamatan tersebut adalah Trucuk,Kanor dan Baureno. Ketinggian air saat ini terpantau tinggal semata kaki orang dewasa.
+    Menurut Salamun (28) relawan MRI Kabupaten Bojonegoro yang aktif memantau ketinggian debit air Sungai Bengawan Solo, banjir mulai surut sejak pukul 07:00 Minggu (5/4). 
+    Banjir yang merendam ratusan hektar lahan pertanian dan pemukiman warga di tiga Kecamatan di Kabupaten Bojonegoro Senin (6/4) berangsur surut. Ketiga Kecamatan tersebut adalah Trucuk,Kanor dan Baureno. Ketinggian air saat ini terpantau tinggal semata kaki orang dewasa.
+    Menurut Salamun (28) relawan MRI Kabupaten Bojonegoro yang aktif memantau ketinggian debit air Sungai Bengawan Solo, banjir mulai surut sejak pukul 07:00 Minggu (5/4).
+    Banjir yang merendam ratusan hektar lahan pertanian dan pemukiman warga di tiga Kecamatan di Kabupaten Bojonegoro Senin (6/4) berangsur surut. Ketiga Kecamatan tersebut adalah Trucuk,Kanor dan Baureno. Ketinggian air saat ini terpantau tinggal semata kaki orang dewasa.
+    Menurut Salamun (28) relawan MRI Kabupaten Bojonegoro yang aktif memantau ketinggian debit air Sungai Bengawan Solo, banjir mulai surut sejak pukul 07:00 Minggu (5/4).
+    Banjir yang merendam ratusan hektar lahan pertanian dan pemukiman warga di tiga Kecamatan di Kabupaten Bojonegoro Senin (6/4) berangsur surut. Ketiga Kecamatan tersebut adalah Trucuk,Kanor dan Baureno. Ketinggian air saat ini terpantau tinggal semata kaki orang dewasa.
+    Menurut Salamun (28) relawan MRI Kabupaten Bojonegoro yang aktif memantau ketinggian debit air Sungai Bengawan Solo, banjir mulai surut sejak pukul 07:00 Minggu (5/4).</p>
+    </div>
+    <br>
+    <div class="button">
+      <button class="btn btn-small btn-primary" type="button">Ayo Donasi</button>&nbsp;&nbsp;<button class="btn btn-small btn-primary" type="button" onClick="show_list();">Kembali</button>
+    </div>
+
+  </div>
+</div>
+
+
+<div>
+<br><br><br><br>
+</div>
+</div>
+<div class="row2" style="height:55px;">
+  <center><h3 style="margin-top:10px;"><a href="index.html"><img src="img/home.png" alt="Responsive image" width="35" height="35"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="tel:02129406565"><img src="img/call.png" alt="Responsive image" width="35" height="35"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="publish.html"><img src="img/photo.png" alt="Responsive image" width="35" height="35"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="push.html"><img src="img/message.png" alt="Responsive image" width="35" height="35"></a></h3></center>
+</div>
+
+<script type="text/javascript" src="cordova.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+
+<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript">
+  $(document).ready(function(){
+     var urls = "http://23.229.116.181/act/api/info_bencana_act.php";
+     $('#page_content').hide();
+     $('#detail_menu_1').hide();
+     $('#detail_menu_2').hide();
+     $('#detail_menu_3').hide();
+     $('#loading').show('Clip');
+     $.ajax(
+          {
+              url: urls,
+              jsonp: "callback",
+              dataType:"json",
+              success:function (data) {
+                $('#date_1').text(data.info_bencana[0].tanggal);
+                $('#date_2').text(data.info_bencana[1].tanggal);
+                $('#date_3').text(data.info_bencana[2].tanggal);
+                $('#judul_1').html(data.info_bencana[0].judul);
+                $('#judul_2').html(data.info_bencana[1].judul);
+                $('#judul_3').html(data.info_bencana[2].judul);
+                $('#isi_1').html(data.info_bencana[0].isi.substring(0,300)+' ... <font color="blue" style="cursor:pointer;" onClick="show_detail(1)">Read more</font>');
+                $('#isi_2').html(data.info_bencana[1].isi.substring(0,300)+' ... <font color="blue" style="cursor:pointer;" onClick="show_detail(2)">Read more</font>');
+                $('#isi_3').html(data.info_bencana[2].isi.substring(0,300)+' ... <font color="blue" style="cursor:pointer;" onClick="show_detail(3)">Read more</font>');
+                $('#gambar_1').attr('src',data.info_bencana[0].gambar);
+                $('#gambar_2').attr('src',data.info_bencana[1].gambar);
+                $('#gambar_3').attr('src',data.info_bencana[2].gambar);
+                $('#detail_tanggal_1').text(data.info_bencana[0].tanggal);
+                $('#detail_tanggal_2').text(data.info_bencana[1].tanggal);
+                $('#detail_tanggal_3').text(data.info_bencana[2].tanggal);
+                $('#detail_judul_1').html(data.info_bencana[0].judul);
+                $('#detail_judul_2').html(data.info_bencana[1].judul);
+                $('#detail_judul_3').html(data.info_bencana[2].judul);
+                $('#detail_isi_1').html(data.info_bencana[0].isi);
+                $('#detail_isi_2').html(data.info_bencana[1].isi);
+                $('#detail_isi_3').html(data.info_bencana[2].isi);
+                $('#detail_gambar_1').attr('src',data.info_bencana[0].gambar);
+                $('#detail_gambar_2').attr('src',data.info_bencana[1].gambar);
+                $('#detail_gambar_3').attr('src',data.info_bencana[2].gambar);
+                $('.sebelumnya').attr('id',data.sebelumnya);
+                $('.selanjutnya').attr('id',data.selanjutnya);
+                $('#loading').hide();
+                $('#page_content').show('Clip');
+              }
+          }
+      );
+  });
+  function show_detail(id)
+  {
+     $('#page_content').hide();
+     $('#detail_menu_1').hide();
+     $('#detail_menu_2').hide();
+     $('#detail_menu_3').hide();
+     $('#loading').show('Clip');
+     $('#detail_menu_'+id).show('Clip');
+     $('#loading').hide();
+  }
+  function show_list()
+  {
+     $('#detail_menu_1').hide();
+     $('#detail_menu_2').hide();
+     $('#detail_menu_3').hide();
+     $('#page_content').show('Clip');
+  }
+  function get_page(page)
+  {
+    var page = $("."+page).attr('id');
+    var urls = "http://23.229.116.181/act/api/info_bencana_act.php?page="+page;
+     $('#page_content').hide();
+     $('#detail_menu_1').hide();
+     $('#detail_menu_2').hide();
+     $('#detail_menu_3').hide();
+     $('#loading').show('Clip');
+     $.ajax(
+          {
+              url: urls,
+              jsonp: "callback",
+              dataType:"json",
+              success:function (data) {
+                $('#date_1').text(data.info_bencana[0].tanggal);
+                $('#date_2').text(data.info_bencana[1].tanggal);
+                $('#date_3').text(data.info_bencana[2].tanggal);
+                $('#judul_1').html(data.info_bencana[0].judul);
+                $('#judul_2').html(data.info_bencana[1].judul);
+                $('#judul_3').html(data.info_bencana[2].judul);
+                $('#isi_1').html(data.info_bencana[0].isi.substring(0,300)+' ... <font color="blue" style="cursor:pointer;" onClick="show_detail(1)">Read more</font>');
+                $('#isi_2').html(data.info_bencana[1].isi.substring(0,300)+' ... <font color="blue" style="cursor:pointer;" onClick="show_detail(2)">Read more</font>');
+                $('#isi_3').html(data.info_bencana[2].isi.substring(0,300)+' ... <font color="blue" style="cursor:pointer;" onClick="show_detail(3)">Read more</font>');
+                $('#gambar_1').attr('src',data.info_bencana[0].gambar);
+                $('#gambar_2').attr('src',data.info_bencana[1].gambar);
+                $('#gambar_3').attr('src',data.info_bencana[2].gambar);
+                $('#detail_tanggal_1').text(data.info_bencana[0].tanggal);
+                $('#detail_tanggal_2').text(data.info_bencana[1].tanggal);
+                $('#detail_tanggal_3').text(data.info_bencana[2].tanggal);
+                $('#detail_judul_1').html(data.info_bencana[0].judul);
+                $('#detail_judul_2').html(data.info_bencana[1].judul);
+                $('#detail_judul_3').html(data.info_bencana[2].judul);
+                $('#detail_isi_1').html(data.info_bencana[0].isi);
+                $('#detail_isi_2').html(data.info_bencana[1].isi);
+                $('#detail_isi_3').html(data.info_bencana[2].isi);
+                $('#detail_gambar_1').attr('src',data.info_bencana[0].gambar);
+                $('#detail_gambar_2').attr('src',data.info_bencana[1].gambar);
+                $('#detail_gambar_3').attr('src',data.info_bencana[2].gambar);
+                $('.sebelumnya').attr('id',data.sebelumnya);
+                $('.selanjutnya').attr('id',data.selanjutnya);
+                $('#loading').hide();
+                $('#page_content').show('Clip');
+              }
+          }
+      );
+  }
+</script>
+</body>
+</html>

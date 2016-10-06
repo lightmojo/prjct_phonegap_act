@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>ACT</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <script src="js/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+  <script type="text/javascript" charset="utf-8">
+    document.addEventListener("deviceready",onDeviceReady,false);
+    function onDeviceReady() {
+        var elem = document.getElementById("uuid");
+        elem.value = device.uuid;
+    }
+  </script>
+  <style>
+    body{
+  	 background: #f3f3f3;
+  	}
+
+  .topheader{
+    padding-right:0 !important;
+    padding-left:0 !important;
+  }
+
+    .row2 {
+      background: #050608;
+      position: fixed;
+      height: 80px;
+      bottom: 0;
+      width: 100%;
+    }
+ </style>
+
+</head>
+<body>
+<input type="hidden" name="page_level" id="page_level" value="1">
+<div class="container">
+<div class="row">
+  <div class="col-md-4 topheader">
+   <img class="img-responsive" src="img/topheader.jpg">
+  </div>
+</div>
+<br>
+<form id="form_send" action="#" method="post" style="display:block;height:100%;">
+  <input type="hidden" id="uuid" name="uuid">
+  <div class="form-group">
+    <label for="Nama">Pengirim</label>
+    <input type="text" class="form-control" id="nama" name="nama" placeholder="Nama" required />
+  </div>
+  <div class="form-group">
+    <label for="NoHP">Nomor HP</label>
+    <input type="tel" class="form-control" id="nomor_hp" name="nomor_hp" placeholder="Nomor HP" required />
+  </div>
+  <div class="form-group">
+    <label for="Keterangan">Keterangan</label>
+    <textarea class="form-control" id="pesan" name="pesan" placeholder="Keterangan" required > </textarea>
+    <!-- <input type="text" class="form-control" id="pesan" name="pesan" placeholder="Keterangan" required /> -->
+  </div>
+ 
+  <button type="button" name="sebarkan" id="sebarkan" class="btn btn-default">Kirim</button>
+</form><br><br><br><br>
+</div>
+<div class="row2" style="height:55px;">
+  <center><h3 style="margin-top:10px;"><a href="index.html"><img src="img/home.png" alt="Responsive image" width="35" height="35"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="tel:02129406565"><img src="img/call.png" alt="Responsive image" width="35" height="35"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="publish.html"><img src="img/photo.png" alt="Responsive image" width="35" height="35"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="push.html"><img src="img/message.png" alt="Responsive image" width="35" height="35"></a></h3></center>
+</div>
+
+<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript">
+  $("#sebarkan").click(function() {
+    // alert(data_send);
+      $.ajax(
+          {
+              url: "http://23.229.116.181/act/api/photos.php",
+              data:$("#form_send").serialize(),
+              type:"POST",
+              dataType:"json",
+              success:function (data) {
+                alert('Message Sent');
+              },
+              error:function () {
+                 alert('Error connecting to server');
+              }
+          }
+      );
+  });
+
+</script>
+<script type="text/javascript" charset="utf-8" src="js/cordova.js"></script>
+<!-- <script src="GCMPlugin.js"></script> <!-- GCM Cordova plugin -->
+<script type="text/javascript" charset="utf-8" src="js/jquery_1.5.2.min.js"></script>
+
+<!-- Include my Javascript routines -->
+<script type="text/javascript" charset="utf-8" src="js/GCMPlugin.js"></script>
+<script type="text/javascript" charset="utf-8" src="js/CORDOVA_GCM_script.js"></script>
+
+<script type="text/javascript" charset="utf-8" src="js/statusbarnotification.js"></script>
+<script type="text/javascript" charset="utf-8" src="js/statbarnotif.js"></script>
+</body>
+</html>
